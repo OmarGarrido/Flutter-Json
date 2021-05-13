@@ -11,7 +11,7 @@ class HomePageTemp extends StatelessWidget {
           backgroundColor: Colors.deepPurple,
         ),
         body: _lista(context)
-  
+
         // children: _crearItems(context),
         );
   }
@@ -48,10 +48,16 @@ List<Widget> _listaItems(List<dynamic> data, BuildContext context) {
         color: Colors.blue,
       ),
       onTap: () {
-        showDialog(
-            context: context,
-            builder: (BuildContext context) =>
-                _buildPopUpDialog(context, opt['texto']));
+        print(opt['ruta']);
+        Navigator.of(context).pushNamed(opt['ruta']);
+
+        // showDialog(
+        //     context: context,
+        //     builder: (BuildContext context) =>
+        //         _buildPopUpDialog(context, opt['texto']));
+
+                // final route=MaterialPageRoute(builder:(context)=>AlertPage());
+
       },
     );
     opcioness..add(widgetTemp)..add(Divider());
